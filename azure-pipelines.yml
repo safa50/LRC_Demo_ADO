@@ -17,3 +17,14 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+- task: srlTest@0
+  name: LRC
+  inputs:
+    serverEndpoint: 'LRC Connection'
+    tenantid: '688301833'
+    projectid: '1'
+    testid: '1370'
+
+- script: echo Run Id of the LRC run $(LRC.LRC_RUN_ID)
+  displayName: 'Catch the Run Id of the LRC run'
